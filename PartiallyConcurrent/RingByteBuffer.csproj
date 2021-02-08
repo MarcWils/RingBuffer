@@ -13,14 +13,14 @@ Asynchronous I/O from streams is supported to boost performance.
 
 Supports concurrent reading and writing, and overwriting (optional).
 
-This is the same codebase as the RingByteBuffer NuGet package from https://github.com/xorxornop/RingBuffer. Only the package is converted to support .NET Standard.</Description>
-    <PackageId>MarcWils.RingByteBuffer</PackageId>
+This is the same codebase as the RingBuffer NuGet package from https://github.com/xorxornop/RingBuffer. Only the package is converted to support .NET Standard.</Description>
+    <PackageId>MarcWils.RingBuffer</PackageId>
     <Authors>MarcWils</Authors>
     <Company></Company>
     <Product />
     <RepositoryUrl>https://github.com/MarcWils/RingByteBuffer</RepositoryUrl>
     <PackageTags>ring buffer circular ringbuffer performance</PackageTags>
-    <PackageReleaseNotes>This is the same codebase as the RingByteBuffer NuGet package from https://github.com/xorxornop/RingBuffer. Only the package is converted to support .NET Standard.</PackageReleaseNotes>
+    <PackageReleaseNotes>This is the same codebase as the RingBuffer NuGet package from https://github.com/xorxornop/RingBuffer. Only the package is converted to support .NET Standard.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/MarcWils/RingByteBuffer</PackageProjectUrl>
   </PropertyGroup>
 
