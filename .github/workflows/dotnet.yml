@@ -22,6 +22,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release
     - name: Pack with dotnet
-      run: dotnet pack PartiallyConcurrent\RingByteBuffer.csproj --output nuget-packages --configuration Release
+      run: dotnet pack PartiallyConcurrent/RingByteBuffer.csproj --output nuget-packages --configuration Release
     - name: Push
       run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
