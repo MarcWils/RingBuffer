@@ -1,64 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AC576C01-44F5-4A45-9B81-5AFFDC748A6F}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>RingByteBuffer</RootNamespace>
     <AssemblyName>RingByteBuffer</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <ReleaseVersion>1.3</ReleaseVersion>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
+    <Version>2.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>High performance classic ring/circular buffer (with optional .NET BCL System.IO.Stream interface) for byte data.
+Packaged as a portable class library (PCL).
+
+Asynchronous I/O from streams is supported to boost performance.
+
+Supports concurrent reading and writing, and overwriting (optional).
+
+This is the same codebase as the RingByteBuffer NuGet package from https://github.com/xorxornop/RingBuffer. Only the package is converted to support .NET Standard.</Description>
+    <PackageId>MarcWils.RingByteBuffer</PackageId>
+    <Authors>MarcWils</Authors>
+    <Company></Company>
+    <Product />
+    <RepositoryUrl>https://github.com/MarcWils/RingByteBuffer</RepositoryUrl>
+    <PackageTags>ring buffer circular ringbuffer performance</PackageTags>
+    <PackageReleaseNotes>This is the same codebase as the RingByteBuffer NuGet package from https://github.com/xorxornop/RingBuffer. Only the package is converted to support .NET Standard.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/MarcWils/RingByteBuffer</PackageProjectUrl>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <DocumentationFile>bin\Release\RingByteBuffer.xml</DocumentationFile>
-    <DebugType>pdbonly</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="ConcurrentRingBuffer.cs" />
-    <Compile Include="IRingBuffer.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RingBuffer.cs" />
-    <Compile Include="RingBufferStream.cs" />
-    <Compile Include="SequentialRingBuffer.cs" />
+    <PackageReference Include="MarcWils.PerfCopy" Version="2.0.2" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="PerfCopy">
-      <HintPath>..\packages\PerfCopy.1.2.0\lib\portable-net4+netcore45+wpa81+MonoAndroid1+MonoTouch1\PerfCopy.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
+
 </Project>
